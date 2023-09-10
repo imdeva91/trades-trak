@@ -1,13 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import Card from '@/components/Card'
+import Image from 'next/image'
 const Signup = () => {
     return (
         <div className='md:flex  md:items-center max-w-6xl p-4 m-auto h-[613px]'>
             <div className='w-[687px] h-full '>
                 <div className='m-5 h-[400px]'>
                     <div className='flex items-center'>
-                        <img className='w-10 h-10 ' src='assets/logo.png' />
+                        <Image className='w-10 h-10 ' src='/assets/logo.png' height={100} width={100} alt='logo' />
                         <span>Trades Trek</span>
 
                     </div>

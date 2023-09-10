@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import "../app/globals.css";
 import { data } from '@/public/data';
+import Image from "next/image";
 const Card = () => {
     const [slide, setSlide] = useState(0);
 
@@ -10,22 +11,19 @@ const Card = () => {
         setSlide(slide === data.length - 1 ? 0 : slide + 1);
     };
 
-    // const prevSlide = () => {
-    //     setSlide(slide === 0 ? data.length - 1 : slide - 1);
-    // };
 
-    console.log(data)
     return (
 
         <div>
 
             <div className=' h-[400px] w-[503px]  m-auto mt-44 f'>
                 {data.map((item, id) => {
+
                     return (
-                        <>
-                            <div className={slide === id ? "slide" : "slide slide-hidden"}>
+                        <React.Fragment key={item.id}>
+                            <div key={item.id} className={slide === id ? "slide" : "slide slide-hidden"}>
                                 <div className='flex justify-center   '>
-                                    <img className='h-20 w-20 bg-purple-800 rounded-full backdrop-blur-3xl	 ' src={item.img} />
+                                    <Image key={id} className='h-20 w-20 bg-purple-800 rounded-full backdrop-blur-3xl' src={item.img} height={100} width={100} alt="logo" />
                                 </div>
                                 <div className='flex-col justify-center mt-20'>
                                     <h1 className='text-center font-bold text-3xl  '>{item.title}</h1>
@@ -50,7 +48,7 @@ const Card = () => {
                                     </div >
                                 </div>
                             </div>
-                        </>
+                        </React.Fragment>
                     )
 
                 })}

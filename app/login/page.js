@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Card from '@/components/Card'
+import Image from 'next/image'
 
 const Login = () => {
     return (
@@ -9,7 +10,7 @@ const Login = () => {
             <div className='w-[687px] h-full '>
                 <div className='    p-4 m-10 h-[400px]'>
                     <div className='flex items-center'>
-                        <img className='w-10 h-10 ' src='assets/logo.png' />
+                        <Image className='w-10 h-10 ' src='/assets/logo.png' width={500} height={500} alt='logo' />
                         <span>Trades Trek</span>
 
                     </div>
